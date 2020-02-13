@@ -1,0 +1,31 @@
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 15px;
+}
+.playerBorder {
+  border: solid 1px;
+}
+
+a:link {
+  text-decoration: none;
+  color: snow;
+}
+
+a:visited {
+  text-decoration: none;
+  color: snow;
+}
+
+a:hover {
+  text-decoration: none;
+  color: snow;
+}
+
+a:active {
+  text-decoration: underline;
+}
+img {
+  border-radius: 100%;
+}
+

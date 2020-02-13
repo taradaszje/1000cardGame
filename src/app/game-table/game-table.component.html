@@ -1,0 +1,28 @@
+<hr>
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Game score's"
+         aria-describedby="basic-addon2" #boxValue>
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" type="button" (click)="addNewRow(boxValue); boxValue.value=''">Button
+    </button>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col">
+    <app-player-game
+      *ngFor="let player of playerService.getPlayers()"
+      [player]="player">
+    </app-player-game>
+  </div>
+  <div class="col">
+
+      <div class="row">
+        <div class="col-md-1 text-center justify-content-center">#</div>
+        <div class="col text-center justify-content-center" *ngFor="let name of playersNames"> {{name}}</div>
+      </div>
+    <div style="overflow-y: scroll; overflow-x: hidden;">
+      <app-game-row class="text-center" *ngFor="let row of gameRows" [gameRow]="row"></app-game-row>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<a class="pt-2" [routerLink]="['/players/'+playerId]">
+  <div [style.background-color]="player.color">
+    <h5>{{player.name}}</h5>
+    <div>
+      <img [src]="player.image" [alt]="player.image" width="130px" height="100px">
+    </div>
+  </div>
+</a>

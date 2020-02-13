@@ -1,0 +1,21 @@
+<img [src]="player.image" [alt]="player.name" width="70%" height="200">
+<table class="table-sm table-bordered table-dark" width="70%">
+  <tbody>
+  <tr>
+    <th scope="row">Liczba wygranych</th>
+    <td>{{player.wonNumber}}</td>
+  </tr>
+  <tr>
+    <th scope="row">Procent wygranych</th>
+    <td>{{countWonPercentage()}}%</td>
+  </tr>
+  <tr>
+    <th scope="row">Najwyższa deklaracja</th>
+    <td>{{player.bestWonScoreGame}}</td>
+  </tr>
+  <tr>
+    <th scope="row">Najwyższa przegrana</th>
+    <td>{{player.bestLoseScoreGame}}</td>
+  </tr>
+  </tbody>
+</table>
