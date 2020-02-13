@@ -11,12 +11,8 @@ export class PlayerViewComponent implements OnInit {
   @Input() playerId: number;
   @Input() player: Player;
   constructor() { }
-  // todo subscribe incoming data and comparing value (best win etc)
-  // todo save to database
   // todo what if page reload
   // todo won prize and other features
-  // todo loading data from database
-  // todo sending data to database
   ngOnInit() {
   }
 

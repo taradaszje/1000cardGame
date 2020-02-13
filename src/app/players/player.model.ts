@@ -24,7 +24,7 @@ export class Player {
     const numberScore = Number(gameScore);
     if ( numberScore > this.bestWonScoreGame ) {
       this.bestWonScoreGame = numberScore;
-    } else if (numberScore < this.bestLoseScoreGame) {
+    } else if (numberScore < this.bestLoseScoreGame && numberScore < 0) {
       this.bestLoseScoreGame = numberScore;
     }
     this.actualCollectedScore = numberScore;

@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {PlayerService} from '../players/player.service';
 import {GameRowModel} from './game-row/game-row.model';
+import {GameTableService} from './game-table.service';
+import {DataStorageService} from '../db-service/data-storage.service';
 
 
 @Component({
@@ -13,7 +15,9 @@ export class GameTableComponent implements OnInit {
   counter = 1;
   gameRows: GameRowModel[] = [];
 
-  constructor(private playerService: PlayerService) {
+  constructor(private playerService: PlayerService,
+              private gameTableService: GameTableService,
+              private dataStorageService: DataStorageService) {
   }
 
   ngOnInit() {
@@ -21,17 +25,11 @@ export class GameTableComponent implements OnInit {
       this.playersNames.push(player.name);
     });
   }
-// todo najwyzsza przegrana
+
   addNewRow(boxValue: HTMLInputElement) {
-    const playersScore = boxValue.value.split(' ', this.playerService.getPlayers().length);
-    const gameResults = [];
-    this.playerService.getPlayers().forEach((player, index) => {
-      player.updatePlayerData(playersScore[index]);
-      gameResults.push(player.totalScore);
-    });
-    this.gameRows.push(
-      new GameRowModel(this.counter++, gameResults)
-    );
+    this.gameTableService.addNewRow(boxValue);
+    this.dataStorageService.storeGameRows();
+    this.gameRows = this.gameTableService.getGameRows();
   }
 }
 

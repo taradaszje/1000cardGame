@@ -11,6 +11,9 @@ import { PlayerViewComponent } from './players/players-view/player-view/player-v
 import { PlayersComponent } from './players/players.component';
 import { GameRowComponent } from './game-table/game-row/game-row.component';
 import { PlayerGameComponent } from './game-table/player-game/player-game.component';
+import {HttpClientModule} from '@angular/common/http';
+import {DataStorageService} from './db-service/data-storage.service';
+import {GameTableService} from './game-table/game-table.service';
 
 @NgModule({
   declarations: [
@@ -26,9 +29,10 @@ import { PlayerGameComponent } from './game-table/player-game/player-game.compon
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [DataStorageService, GameTableService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
