@@ -1,12 +1,9 @@
-.column {
-  float: left;
-  width: 33.33%;
-  padding: 15px;
+h5 {
+  text-align: center;
 }
-.playerBorder {
-  border: solid 1px;
+.col {
+  align-content: center;
 }
-
 a:link {
   text-decoration: none;
   color: snow;
@@ -26,6 +23,6 @@ a:active {
   text-decoration: underline;
 }
 img {
-  border-radius: 100%;
+
 }
 

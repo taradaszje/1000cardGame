@@ -1,5 +1,8 @@
 .row {
   background-color: black;
 }
+.col-4 {
+  align-content: center;
+}
 
 

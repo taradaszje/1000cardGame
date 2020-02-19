@@ -1,8 +1,7 @@
-<div class="row">
-  <app-player-view class="col" *ngFor="let player of players; let i = index"
-                   [player]="player"
-                   [playerId]="i">
-  </app-player-view>
-</div>
+<app-player-view class="col-3 float-left pb-3 border border-warning" *ngFor="let player of players; let i = index"
+                 [player]="player"
+                 [playerId]="i">
+</app-player-view>
+
 
 

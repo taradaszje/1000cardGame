@@ -1,4 +1,9 @@
-.row {
+.jumbotron-fluid {
+  background-color: black;
+  width: 100%;
+}
+.col-3 {
   background-color: black;
 }
+
 

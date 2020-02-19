@@ -21,6 +21,7 @@ export class DataStorageService {
   fetchGameRows() {
     return this.http.get<GameRowModel[]>('https://thousandcardgame-de46d.firebaseio.com/gameRows.json')
       .subscribe(gameRows => {
+
         this.gameTableService.setGameRows(gameRows);
       });
   }

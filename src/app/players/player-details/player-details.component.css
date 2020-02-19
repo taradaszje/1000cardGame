@@ -1,3 +1,10 @@
 img {
-  border-radius: 50%;
+  position: center;
+}
+.col {
+  text-align: center;
+}
+.border {
+  align-content: center;
+  text-align: center;
 }
