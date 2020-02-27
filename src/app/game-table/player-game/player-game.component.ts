@@ -9,10 +9,8 @@ import {PlayerService} from '../../players/player.service';
 })
 export class PlayerGameComponent implements OnInit {
   @Input() player: Player;
-  scores: number[] = [];
-  constructor(private playerService: PlayerService) { }
+  constructor() { }
 
   ngOnInit() {
   }
-// todo on mobile devices allow only numeric screen
 }

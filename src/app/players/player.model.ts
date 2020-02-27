@@ -7,6 +7,7 @@ export class Player {
   public bestLoseScoreGame: number;
   public actualCollectedScore = 0;
   public totalScore = 0;
+  public isClicked = false;
   public color: string;
 
   constructor(name: string, image: string, wonNumber: number, numberOfGames: number, bestWonScoreGame: number,
@@ -20,14 +21,13 @@ export class Player {
   }
 
 
-  updatePlayerData(gameScore: string) {
-    const numberScore = Number(gameScore);
-    if ( numberScore > this.bestWonScoreGame ) {
-      this.bestWonScoreGame = numberScore;
-    } else if (numberScore < this.bestLoseScoreGame && numberScore < 0) {
-      this.bestLoseScoreGame = numberScore;
+  updatePlayerData(gameScore: number) {
+    if ( gameScore > this.bestWonScoreGame ) {
+      this.bestWonScoreGame = gameScore;
+    } else if (gameScore < this.bestLoseScoreGame && gameScore < 0) {
+      this.bestLoseScoreGame = gameScore;
     }
-    this.actualCollectedScore = numberScore;
-    this.totalScore += numberScore;
+    this.actualCollectedScore = gameScore;
+    this.totalScore += gameScore;
   }
 }

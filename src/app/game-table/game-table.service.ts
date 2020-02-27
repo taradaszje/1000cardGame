@@ -1,25 +1,22 @@
 import {GameRowModel} from './game-row/game-row.model';
-import {PlayerService} from '../players/player.service';
 import {Injectable} from '@angular/core';
+import {PlayerService} from '../players/player.service';
+import {Subject} from 'rxjs';
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class GameTableService {
-  counter = 1;
   gameRows: GameRowModel[] = [];
-
+  scoresObserver: Subject<GameRowModel[]> = new Subject<GameRowModel[]>();
   constructor(private playerService: PlayerService) {
   }
 
-  addNewRow(boxValue: HTMLInputElement) {
-    const playersScore = boxValue.value.split(' ', this.playerService.getPlayers().length);
-    const gameResults = [];
+  processData(gameRow: GameRowModel) {
+    this.gameRows.push(gameRow);
     this.playerService.getPlayers().forEach((player, index) => {
-      player.updatePlayerData(playersScore[index]);
-      gameResults.push(player.totalScore);
+      player.updatePlayerData(gameRow.playerScores[index]);
     });
-    this.gameRows.push(
-      new GameRowModel(this.counter++, gameResults)
-    );
+    this.scoresObserver.next(this.gameRows);
+    console.log('table' + this.gameRows);
   }
 
   getGameRows() {
@@ -29,4 +26,5 @@ export class GameTableService {
   setGameRows(gameRows: GameRowModel[]) {
     this.gameRows = gameRows;
   }
+
 }

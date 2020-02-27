@@ -14,6 +14,12 @@ import { PlayerGameComponent } from './game-table/player-game/player-game.compon
 import {HttpClientModule} from '@angular/common/http';
 import {DataStorageService} from './db-service/data-storage.service';
 import {GameTableService} from './game-table/game-table.service';
+import {AngularFireModule} from '@angular/fire';
+import {environment} from '../environments/environment';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
+import { PlayerChoiceComponent } from './players/player-choice/player-choice.component';
+import { StartGameComponent } from './start-game/start-game.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -25,12 +31,17 @@ import {GameTableService} from './game-table/game-table.service';
     PlayerViewComponent,
     PlayersComponent,
     GameRowComponent,
-    PlayerGameComponent
+    PlayerGameComponent,
+    PlayerChoiceComponent,
+    StartGameComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule,
+    BrowserAnimationsModule
   ],
   providers: [DataStorageService, GameTableService],
   bootstrap: [AppComponent]

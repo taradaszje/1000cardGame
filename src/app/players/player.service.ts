@@ -27,4 +27,7 @@ export class PlayerService {
     return this.players[id];
   }
 
+  setPlayers() {
+    this.players = this.players.filter( player => player.isClicked );
+  }
 }

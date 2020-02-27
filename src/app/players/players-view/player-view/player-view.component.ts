@@ -11,8 +11,6 @@ export class PlayerViewComponent implements OnInit {
   @Input() playerId: number;
   @Input() player: Player;
   constructor() { }
-  // todo what if page reload
-  // todo won prize and other features
   ngOnInit() {
   }
 

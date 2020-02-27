@@ -10,10 +10,11 @@ import {Player} from '../player.model';
 export class PlayersViewComponent implements OnInit {
 
   players: Player[] = [];
-  constructor(public playerService: PlayerService) { }
+  constructor(private playerService: PlayerService) { }
 
   ngOnInit() {
     this.players = this.playerService.getPlayers();
+
   }
 
 }

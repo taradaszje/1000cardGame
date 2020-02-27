@@ -12,7 +12,6 @@ import {DataStorageService} from '../db-service/data-storage.service';
 })
 export class GameTableComponent implements OnInit {
   playersNames: string[] = [];
-  counter = 1;
   gameRows: GameRowModel[] = [];
 
   constructor(private playerService: PlayerService,
@@ -24,12 +23,11 @@ export class GameTableComponent implements OnInit {
     this.playerService.getPlayers().forEach((player) => {
       this.playersNames.push(player.name);
     });
+    this.dataStorageService.getData();
+    this.gameTableService.scoresObserver.subscribe(gameRows => {
+      this.gameRows = gameRows;
+    });
   }
 
-  addNewRow(boxValue: HTMLInputElement) {
-    this.gameTableService.addNewRow(boxValue);
-    this.dataStorageService.storeGameRows();
-    this.gameRows = this.gameTableService.getGameRows();
-  }
 }
 
