@@ -23,6 +23,6 @@ export class PlayerDetailsComponent implements OnInit {
     });
   }
   countWonPercentage() {
-    return this.player.wonNumber / this.player.numberOfGames * 100;
+    return this.player.winNumber / this.player.numberOfGames * 100;
   }
 }

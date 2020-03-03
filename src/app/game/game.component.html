@@ -1,0 +1,19 @@
+<div class="main">
+  <div class="players">
+    <app-players-view></app-players-view>
+  </div>
+  <div class="middle-view">
+    <div class="game-progress">
+      <app-game-progress
+        *ngFor="let player of playerService.getPlayers()"
+        [player]="player">
+      </app-game-progress>
+    </div>
+    <div class="player-details">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <div class="game">
+    <app-game-table></app-game-table>
+  </div>
+</div>

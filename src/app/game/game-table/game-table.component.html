@@ -1,0 +1,21 @@
+<!--<div class="names">#</div>-->
+<!--<div class="names"-->
+<!--     *ngFor="let player of playerService.getPlayers()">-->
+<!--  {{player.name}}</div>-->
+<table class="game-table">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th *ngFor="let player of playerService.getPlayers()">{{player.name}}</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let gameRow of gameTableService.getGameRows(); let i = index">
+      <td>{{i+1}}</td>
+      <ng-container *ngFor="let value of gameRow.playerScores">
+        <td *ngIf="value === 1000">bomba</td>
+        <td *ngIf="value !== 1000">{{value}}</td>
+      </ng-container>
+    </tr>
+  </tbody>
+</table>

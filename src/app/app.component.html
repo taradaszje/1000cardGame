@@ -1,19 +1,7 @@
-<div class="row align-top">
-  <div class="col border border-warning">
-    <app-title></app-title>
-  </div>
+<div class="main-site"
+     [@routeAnimations]="prepareRoute(outlet)">
+  <router-outlet #outlet="outlet"></router-outlet>
 </div>
-<div class="row align-middle">
-  <div class="col-8 border-warning border">
-    <app-game-table></app-game-table>
-  </div>
-  <div class="col-4 border border-warning">
-    <router-outlet ></router-outlet>
-  </div>
-</div>
-
-
-<app-players-view></app-players-view>
 
 
 

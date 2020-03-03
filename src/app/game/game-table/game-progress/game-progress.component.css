@@ -1,0 +1,46 @@
+p {
+  text-align: center;
+}
+div {
+  color: snow;
+}
+.border {
+  height: 25%;
+}
+
+progress[value] {
+  width: 100%;
+  border-radius: 15px;
+  -webkit-appearance: none;
+  appearance: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.25) inset;
+  -webkit-animation: animate-stripes 5s linear infinite;
+  animation: animate-stripes 5s linear infinite;
+}
+progress[value]::-webkit-progress-bar {
+  background-color: black;
+}
+progress[value]::-webkit-progress-inner-element {
+  border: 1px solid dimgrey;
+  border-radius: 5px;
+}
+progress[value]::-webkit-progress-value {
+  background-image:
+    -webkit-linear-gradient(0deg,
+    transparent 33%, rgba(0,0,0,.1) 33%,
+    rgba(0,0,0, .1) 66%, transparent 100%),
+  -webkit-linear-gradient(top, black, rgba(0,0,0,.25)),
+  -webkit-linear-gradient(left, dimgrey, orangered);
+  background-size: 35px 20px, 100% 100%, 100% 100%;
+
+}
+@-webkit-keyframes animate-stripes {
+  100% {background-position: -100px 0; }
+}
+
+@keyframes animate-stripes {
+  100% { background-position: -100px 0;}
+}
+.game-progress {
+  width: 100%;
+}

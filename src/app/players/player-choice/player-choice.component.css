@@ -1,0 +1,10 @@
+.player {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  font-weight: 500;
+  background-color: black;
+}
+.player:hover {
+  background-color: orange;
+}

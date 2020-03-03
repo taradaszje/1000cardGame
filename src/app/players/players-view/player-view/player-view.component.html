@@ -1,10 +1,10 @@
-<a class="c" [routerLink]="['/players/'+playerId]">
-  <div [style.background-color]="player.color">
+<a [routerLink]="['/game/players/'+playerId]" >
+  <div class="each" [style.background-color]="player.color">
     <div class="col">
       <h5>{{player.name}}</h5>
     </div>
     <div class="col">
-      <img [src]="player.image" [alt]="player.image" width="100%" height="235px">
+      <img [src]="player.image" [alt]="player.image" width="100%" height="100px">
     </div>
   </div>
 </a>
