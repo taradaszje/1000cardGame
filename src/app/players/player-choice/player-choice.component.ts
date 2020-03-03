@@ -11,13 +11,19 @@ import {Player} from '../player.model';
       state('notClicked', style({
         height: '150px',
         width: '150px',
-        backgroundColor: 'yellow'
+        color: 'white',
+        fontSize: '20px',
+        border: '1px solid orangered'
+
       })),
       state('clicked', style({
         height: '250px',
         width: '250px',
-        backgroundColor: 'red'
+        backgroundColor: '#0074D9',
+        fontSize: '35px',
+        border: '1px solid #001f3f'
       })),
+      transition(':enter', []),
       transition('notClicked => clicked', [
         animate('1s')
       ]),
@@ -34,7 +40,7 @@ export class PlayerChoiceComponent implements OnInit {
   constructor() {
   }
 
-  toggle() {
+  toggleIsClicked() {
     this.isClicked = !this.isClicked;
     this.player.isClicked = !this.player.isClicked;
   }

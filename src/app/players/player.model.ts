@@ -1,7 +1,7 @@
 export class Player {
   public name: string;
   public image: string;
-  public wonNumber: number;
+  public winNumber: number;
   public numberOfGames: number;
   public bestWonScoreGame: number;
   public bestLoseScoreGame: number;
@@ -10,11 +10,11 @@ export class Player {
   public isClicked = false;
   public color: string;
 
-  constructor(name: string, image: string, wonNumber: number, numberOfGames: number, bestWonScoreGame: number,
+  constructor(name: string, image: string, winNumber: number, numberOfGames: number, bestWonScoreGame: number,
               bestLoseScoreGame: number) {
     this.name = name;
     this.image = image;
-    this.wonNumber = wonNumber;
+    this.winNumber = winNumber;
     this.numberOfGames = numberOfGames;
     this.bestWonScoreGame = bestWonScoreGame;
     this.bestLoseScoreGame = bestLoseScoreGame;
@@ -22,12 +22,23 @@ export class Player {
 
 
   updatePlayerData(gameScore: number) {
-    if ( gameScore > this.bestWonScoreGame ) {
+    if (gameScore === 1000) { // bomb logic
+      gameScore = 0;
+    }
+    if (gameScore > this.bestWonScoreGame) {
       this.bestWonScoreGame = gameScore;
     } else if (gameScore < this.bestLoseScoreGame && gameScore < 0) {
       this.bestLoseScoreGame = gameScore;
     }
     this.actualCollectedScore = gameScore;
     this.totalScore += gameScore;
+    this.updateWinNumber();
+  }
+
+  updateWinNumber() {
+    if (this.totalScore >= 1000) {
+      this.winNumber++;
+      this.numberOfGames++;
+    }
   }
 }

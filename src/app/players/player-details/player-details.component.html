@@ -1,28 +1,21 @@
-<div class="col border border-warning">
-  <div class="col">
-    <img class="rounded" [src]="player.image" [alt]="player.name" height="250" width="240">
-  </div>
-  <div class="col">
-    <table class="table-sm table-bordered table-dark table-striped" align="center" width="100%">
-      <tbody>
-      <tr>
-        <th scope="row">Liczba wygranych</th>
-        <td>{{player.wonNumber}}</td>
-      </tr>
-      <tr>
-        <th scope="row">Procent wygranych</th>
-        <td>{{countWonPercentage()}}%</td>
-      </tr>
-      <tr>
-        <th scope="row">Najwyższa deklaracja</th>
-        <td>{{player.bestWonScoreGame}}</td>
-      </tr>
-      <tr>
-        <th scope="row">Najwyższa przegrana</th>
-        <td>{{player.bestLoseScoreGame}}</td>
-      </tr>
-      </tbody>
-    </table>
-
-  </div>
-</div>
+<img class="image" [src]="player.image" [alt]="player.name">
+<table>
+  <tbody>
+  <tr>
+    <th>Liczba wygranych</th>
+    <td>{{player.winNumber}}</td>
+  </tr>
+  <tr>
+    <th>Procent wygranych</th>
+    <td>{{countWonPercentage()}}%</td>
+  </tr>
+  <tr>
+    <th>Najwyższa deklaracja</th>
+    <td>{{player.bestWonScoreGame}}</td>
+  </tr>
+  <tr>
+    <th>Najwyższa przegrana</th>
+    <td>{{player.bestLoseScoreGame}}</td>
+  </tr>
+  </tbody>
+</table>

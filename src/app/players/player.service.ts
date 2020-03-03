@@ -6,7 +6,7 @@ import {Player} from './player.model';
 })
 export class PlayerService {
 
-  private players = [
+  private players: Player[] = [
     new Player('Jaroslaw', 'http://smail.zdunskawola.pl/www/portal?id=50015&res_id=432607', 1, 4,
       220, 180),
     new Player('Patryk', 'https://static.goldenline.pl/user_photo/213/user_5236181_dd8644_huge.jpg', 2, 4,
@@ -27,7 +27,7 @@ export class PlayerService {
     return this.players[id];
   }
 
-  setPlayers() {
-    this.players = this.players.filter( player => player.isClicked );
+  setPlayers(players: Player[]) {
+    this.players = players;
   }
 }

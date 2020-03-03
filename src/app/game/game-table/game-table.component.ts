@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {PlayerService} from '../players/player.service';
-import {GameRowModel} from './game-row/game-row.model';
+import {GameRowModel} from './game-row.model';
 import {GameTableService} from './game-table.service';
-import {DataStorageService} from '../db-service/data-storage.service';
+import {PlayerService} from '../../players/player.service';
+import {DataStorageService} from '../../db-service/data-storage.service';
 
 
 @Component({
@@ -24,10 +24,6 @@ export class GameTableComponent implements OnInit {
       this.playersNames.push(player.name);
     });
     this.dataStorageService.getData();
-    this.gameTableService.scoresObserver.subscribe(gameRows => {
-      this.gameRows = gameRows;
-    });
   }
-
 }
 

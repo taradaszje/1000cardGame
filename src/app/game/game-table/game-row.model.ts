@@ -1,14 +1,16 @@
 import {OnInit} from '@angular/core';
 
 export class GameRowModel implements OnInit {
-  public roundNumber: number;
   public playerScores: number[];
 
-  constructor(roundNumber: number, playerScores: number[]) {
-    this.roundNumber = roundNumber;
+  constructor(playerScores: number[]) {
     this.playerScores = playerScores;
   }
 
   ngOnInit() {
+  }
+
+  getPlayerScore(index: number) {
+    return this.playerScores[index];
   }
 }

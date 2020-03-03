@@ -1,6 +1,7 @@
-<header>
-  <button (click)="startGame()"> start </button>
-</header>
-<main>
-  <app-player-choice *ngFor="let player of players" [player]="player"></app-player-choice>
-</main>
+<div class="site">
+  <app-player-choice *ngFor="let player of players" [player]="player"> {{player.name}}</app-player-choice>
+</div>
+<div class="start-button">
+  <button routerLink="/game" class="btn btn-outline-secondary" (click)="startGame()"> Let's play :)</button>
+</div>
+

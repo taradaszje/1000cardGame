@@ -1,8 +1,8 @@
-.row {
-  background-color: black;
-}
-.col-4 {
-  align-content: center;
+.main-site {
+  font-family: Courier New, serif;
+  color: #484848;
+  width: 100vw;
+  height: 100vh;
 }
 
 

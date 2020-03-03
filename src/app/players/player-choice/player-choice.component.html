@@ -1,3 +1,6 @@
-<button (click)="toggle()" [@clickedNotClicked]="isClicked ? 'notClicked' : 'clicked'" class="player">
+<button
+        (click)="toggleIsClicked()"
+        [@clickedNotClicked]="isClicked ? 'notClicked' : 'clicked'"
+        class="player">
   {{player.name}}
 </button>
