@@ -2,22 +2,24 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  background-color: black;
+  position: relative;
   height: 50vh;
   flex-wrap: wrap;
+  z-index: 4;
 }
 .start-button {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  background-color: black;
+  position: relative;
   height: 50vh;
+  z-index: 4;
 }
 button {
-  height: 45px;
   border-radius: 15px;
-  width: 80%;
+  width: 25%;
   height: 100px;
   font-size: 35px;
+  z-index: 4;
 }
 

@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {PlayerService} from '../players/player.service';
 import {Player} from '../players/player.model';
 
 @Component({
@@ -18,13 +17,10 @@ export class StartGameComponent implements OnInit {
     new Player('Majcher', 'https://i.imgur.com/KdqJPFp.jpg', 1, 2, 0, 0)
   ];
 
-  constructor(private playerService: PlayerService) {
+  constructor() {
   }
 
   ngOnInit() {
   }
 
-  startGame() {
-    this.playerService.setPlayers(this.players.filter(player => player.isClicked === true));
-  }
 }

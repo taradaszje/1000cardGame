@@ -3,7 +3,7 @@ import {animate, animateChild, group, query, style, transition, trigger} from '@
 export const slideInAnimation =
   trigger('routeAnimations', [
     transition('StartPage <=> GamePage', [
-      style({position: 'absolute'}),
+      style({position: 'relative'}),
       query(':enter, :leave', [
         style({
           position: 'absolute',
