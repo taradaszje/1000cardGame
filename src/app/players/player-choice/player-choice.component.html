@@ -1,6 +1,3 @@
-<button
-        (click)="toggleIsClicked()"
-        [@clickedNotClicked]="isClicked ? 'notClicked' : 'clicked'"
-        class="player">
-  {{player.name}}
-</button>
+<input (keyup)="onKey($event)" value="{{player.name}}" (click)="toggleIsClicked()"
+       [@clickedNotClicked]="isClicked ? 'notClicked' : 'clicked'"
+       class="player">

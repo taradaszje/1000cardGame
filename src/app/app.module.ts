@@ -20,6 +20,7 @@ import {GameTableComponent} from './game/game-table/game-table.component';
 import {GameComponent} from './game/game.component';
 import {GameTableService} from './game/game-table/game-table.service';
 import {GameProgressComponent} from './game/game-table/game-progress/game-progress.component';
+import {PlayerService} from "./players/player.service";
 
 @NgModule({
   declarations: [

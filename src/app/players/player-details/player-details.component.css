@@ -1,17 +1,17 @@
 table {
   margin: auto;
   color: #B8B8B8;
-  border: 1px solid orangered;
+  border: 1px solid black;
 }
 
 th,td {
-  text-align: left;
-  border: 1px solid orangered;
+  border: 1px solid black;
   text-align: center;
 }
 
 img {
-  border: 1px solid dimgrey;
+  border: 1px solid black;
   width: 200px;
   height: 200px;
+  position: unset;
 }

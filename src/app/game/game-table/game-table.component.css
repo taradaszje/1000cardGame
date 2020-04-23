@@ -1,22 +1,23 @@
 table {
   width: 100%;
-  border: orangered solid 1px;
-  color: #B8B8B8;
+  border: black solid 1px;
+  color: snow;
   text-align: center;
   font-size: 22px;
+
 }
 
 thead {
-  border: orangered solid 1px;
+  border: black solid 1px;
   width: 100%;
 }
 
 th {
-  border: orangered solid 1px;
+  border: black solid 1px;
 }
 
 td {
-  border: orangered solid 1px;
+  border: black solid 1px;
 }
 
 

@@ -3,16 +3,31 @@ h5 {
   color: #B8B8B8;
 }
 .each {
+  position: relative;
   padding-bottom: 5px;
-  border: solid orangered 1px;
+  border: solid black 1px;
   margin-bottom: 5px;
+  text-align: center;
   margin-top: 5px;
+  height: 23vh;
+  width: 16vw;
+  z-index: 4;
 }
 .each:hover {
-  background-color: orangered;
+  background-color: black;
 }
 .col {
-  align-content: end;
+  align-content: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+img{
+  width: 11vw;
+  height: 16vh;
+  right: unset;
+  margin: auto;
+  position: relative;
 }
 a:link {
   text-decoration: none;

@@ -22,14 +22,12 @@ export class Player {
 
 
   updatePlayerData(gameScore: number) {
-    if (gameScore === 1000) { // bomb logic
-      gameScore = 0;
-    }
     if (gameScore > this.bestWonScoreGame) {
       this.bestWonScoreGame = gameScore;
     } else if (gameScore < this.bestLoseScoreGame && gameScore < 0) {
       this.bestLoseScoreGame = gameScore;
     }
+    console.log(gameScore);
     this.actualCollectedScore = gameScore;
     this.totalScore += gameScore;
     this.updateWinNumber();
