@@ -2,6 +2,12 @@ h5 {
   text-align: center;
   color: #B8B8B8;
 }
+@keyframes border-blinking {
+  50% {border: snow solid 1px;}
+}
+.player-blink{
+  animation: infinite 2s border-blinking;
+}
 .each {
   position: relative;
   padding-bottom: 5px;

@@ -28,13 +28,18 @@ export class GameTableComponent implements OnInit {
     this.dataStorageService.getData();
     this.gameTableService.gameRowEmitter.subscribe(gameRow => {
       this.gameRows.push(gameRow);
-      this.router.navigate(['/game/players/'+ this.getNextPlayerNumber()])
+      this.router.navigate(['/game/players/'+ this.getNextPlayerNumber()]);
+      this.checkPlayersScore();
     });
-    // this.gameTableService.gameBombEmitter.subscribe(gameBomb => {
-    //   this.gameRows.push(gameBomb);
-    // });
   }
 
+  private checkPlayersScore(){
+    this.playerService.getPlayers().forEach(player => {
+      if(player.totalScore > 999){
+        this.dataStorageService.deleteGameRow();
+      }
+    })
+  }
   private getNextPlayerNumber(){
     return this.gameRows.length % this.playersNames.length;
   }

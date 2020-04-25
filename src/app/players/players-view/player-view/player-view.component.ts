@@ -12,7 +12,7 @@ export class PlayerViewComponent implements OnInit {
 
   @Input() playerId: number;
   @Input() player: Player;
-  private playerNumber = 0;
+  playerNumber = 0;
   constructor(private router: ActivatedRoute, private gameTableService: GameTableService) { }
   ngOnInit() {
     this.gameTableService.gameRowEmitter.subscribe(gameRow => {

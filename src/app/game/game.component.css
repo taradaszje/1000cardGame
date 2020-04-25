@@ -2,6 +2,7 @@
   background-color: black;
   display: flex;
   flex-direction: row;
+  font-family: Courier New, serif;
 }
 .players {
   display: flex;

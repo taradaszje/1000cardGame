@@ -8,7 +8,7 @@ import {PlayerService} from '../players/player.service';
 })
 export class GameComponent implements OnInit {
 
-  constructor(private playerService: PlayerService, private changeDetection: ChangeDetectorRef) { }
+  constructor(public playerService: PlayerService, private changeDetection: ChangeDetectorRef) { }
 
   ngOnInit() {
     setInterval(this.changeDetection.detectChanges, 10000);

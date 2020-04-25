@@ -1,5 +1,5 @@
 <a [routerLink]="['/game/players/'+playerId]" >
-  <div class="each" [style.background-color]="playerNumber === playerId ? 'black' : 'transparent'">
+  <div class="each" [ngClass]="{'player-blink':playerNumber === playerId}">
     <div class="col">
       <h5>{{player.name}}</h5>
     </div>
