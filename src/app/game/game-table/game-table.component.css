@@ -4,7 +4,6 @@ table {
   color: snow;
   text-align: center;
   font-size: 22px;
-
 }
 
 thead {
@@ -18,6 +17,10 @@ th {
 
 td {
   border: black solid 1px;
+}
+
+tr:nth-child(5n) > td{
+  border: snow solid 2px;
 }
 
 

@@ -4,7 +4,6 @@ import {PlayerDetailsComponent} from './players/player-details/player-details.co
 import {PlayersComponent} from './players/players.component';
 import {StartGameComponent} from './start-game/start-game.component';
 import {GameComponent} from './game/game.component';
-import {animation} from '@angular/animations';
 
 
 const routes: Routes = [

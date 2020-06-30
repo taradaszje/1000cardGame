@@ -27,9 +27,9 @@ export class Player {
     } else if (gameScore < this.bestLoseScoreGame && gameScore < 0) {
       this.bestLoseScoreGame = gameScore;
     }
-    console.log(gameScore);
     this.actualCollectedScore = gameScore;
     this.totalScore += gameScore;
+    console.log('total score' + this.totalScore);
     this.updateWinNumber();
   }
 
