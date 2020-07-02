@@ -3,7 +3,6 @@ import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {TitleComponent} from './title/title.component';
 import {PlayersViewComponent} from './players/players-view/players-view.component';
 import {PlayerDetailsComponent} from './players/player-details/player-details.component';
 import {PlayerViewComponent} from './players/players-view/player-view/player-view.component';
@@ -20,12 +19,10 @@ import {GameTableComponent} from './game/game-table/game-table.component';
 import {GameComponent} from './game/game.component';
 import {GameTableService} from './game/game-table/game-table.service';
 import {GameProgressComponent} from './game/game-table/game-progress/game-progress.component';
-import {PlayerService} from "./players/player.service";
 
 @NgModule({
   declarations: [
     AppComponent,
-    TitleComponent,
     GameTableComponent,
     PlayersViewComponent,
     PlayerDetailsComponent,

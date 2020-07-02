@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {Player} from '../player.model';
 import {PlayerService} from "../player.service";
@@ -19,13 +19,12 @@ import {PlayerService} from "../player.service";
       })),
       state('clicked', style({
         height: '250px',
-        color: 'snow',
         width: '250px',
+        color: 'snow',
         fontSize: '35px',
         border: '1px solid gray',
         borderRadius: '15px'
       })),
-      transition(':enter', []),
       transition('notClicked => clicked', [
         animate('1s')
       ]),
@@ -38,14 +37,14 @@ import {PlayerService} from "../player.service";
 export class PlayerChoiceComponent implements OnInit {
   isClicked = true;
   @Input() player: Player;
-
+  @ViewChild('playerView', {static: true}) elementView : ElementRef;
   constructor(private playerService: PlayerService) {
   }
 
   toggleIsClicked() {
     this.isClicked = !this.isClicked;
     this.playerService.addPlayer(this.player);
-    console.log(this.playerService.getPlayers().length);
+    console.log(this.elementView);
   }
 
   ngOnInit() {

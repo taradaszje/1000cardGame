@@ -17,23 +17,32 @@ export class GameTableService {
       this.playerService.getPlayers().forEach((player, index) => {
         player.updatePlayerData(gameRow[index]);
       });
-    const value = this.addNewRowToLastRow(gameRow);
-      console.log('value' + value);
+      const value = this.addNewRowToLastRow(gameRow);
       this.gameRows.push(value);
       this.gameRowEmitter.emit(value);
     } else {
-      this.gameRows.push(gameRow);
-      this.gameRowEmitter.emit(gameRow);
+      const bombRow = this.addActualScoresToBombRow(gameRow);
+      this.gameRows.push(bombRow);
+      this.gameRowEmitter.emit(bombRow);
     }
   }
-
+  addActualScoresToBombRow(bombRow: number[]) {
+    for(let i = 0; i < bombRow.length; i++){
+      if(bombRow[i] !== 1001){
+        bombRow[i] += this.playerService.getPlayers()[i].totalScore;
+      }
+    }
+    return bombRow;
+}
   addNewRowToLastRow(databaseRow: number[]) {
     if (this.getGameRows().length === 0) {
       return databaseRow;
     }
     for (let i = 0; i < databaseRow.length; i++) {
-      if (databaseRow[i] !== 1001) {
+      if (this.gameRows.slice(-1)[0][i] !== 1001) {
         databaseRow[i] += this.gameRows.slice(-1)[0][i]; // get last row and add scores
+      }else {
+        databaseRow[i] = this.playerService.getPlayers()[i].totalScore;
       }
     }
     return databaseRow;
