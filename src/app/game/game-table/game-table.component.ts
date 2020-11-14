@@ -1,8 +1,7 @@
-import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, NgZone, OnInit} from '@angular/core';
 import {GameTableService} from './game-table.service';
 import {PlayerService} from '../../players/player.service';
 import {DataStorageService} from '../../db-service/data-storage.service';
-import {Subject} from "rxjs";
 import {Router} from "@angular/router";
 
 
@@ -18,7 +17,8 @@ export class GameTableComponent implements OnInit {
   constructor(private playerService: PlayerService,
               private gameTableService: GameTableService,
               private dataStorageService: DataStorageService,
-              private router: Router) {
+              private router: Router,
+              private ngZone: NgZone) {
   }
 
   ngOnInit() {
@@ -28,7 +28,7 @@ export class GameTableComponent implements OnInit {
     this.dataStorageService.getData();
     this.gameTableService.gameRowEmitter.subscribe(gameRow => {
       this.gameRows.push(gameRow);
-      this.router.navigate(['/game/players/'+ this.getNextPlayerNumber()]);
+      this.ngZone.run(() => this.router.navigate(['/game/players/' + this.getNextPlayerNumber()]));
       this.checkPlayersScore();
     });
   }
@@ -40,6 +40,7 @@ export class GameTableComponent implements OnInit {
       }
     })
   }
+
   private getNextPlayerNumber(){
     return this.gameRows.length % this.playersNames.length;
   }
